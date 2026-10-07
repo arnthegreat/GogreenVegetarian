@@ -1,0 +1,10 @@
+{
+  "description": "Provides expert-level development solutions by executing complex coding tasks efficiently to meet professional project requirements and deadlines.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

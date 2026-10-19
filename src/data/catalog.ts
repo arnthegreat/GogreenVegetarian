@@ -1,3 +1,11 @@
+import aeonlogo from "@/assets/logo/aeon.png"
+import cambodiatrade from "@/assets/logo/cambodiatrade.png"
+import chipmong from "@/assets/logo/chipmong.png"
+import sbaireoungmart from "@/assets/logo/sbaireoungmart.png"
+import thaihuot from "@/assets/logo/thaihuot.png"
+import vegetarianrestaurant from "@/assets/logo/vegetarianrestaurants.png"
+import weemarkethub from "@/assets/logo/weemarkethub.png"
+import wholesalevegetarianogo from "@/assets/logo/wholesalevegetariangroceries.png"
 import { IMG } from '@/data/site'
 
 export const PRODUCTS = [
@@ -45,56 +53,57 @@ export const STORES = [
   {
     name: "Aeon Supermarket",
     type: "Supermarket",
-    icon: "🏬",
+    logo: "",
+    logoImage: aeonlogo,
     address: "Ground Floor, AEON Mall Sen Sok, Russian Blvd, Phnom Penh",
     hours: "9am–10pm",
   },
   {
     name: "Thai Huot Supermarket",
     type: "Supermarket",
-    icon: "🛒",
+    logoImage: thaihuot,
     address: "123 Monivong Blvd, BKK1, Phnom Penh",
     hours: "7am–9pm",
   },
   {
     name: "Chip Mong Supermarket",
     type: "Supermarket",
-    icon: "🏪",
+    logoImage: chipmong,
     address: "Chip Mong 271 Mall, St 271, Phnom Penh",
     hours: "8am–9pm",
   },
   {
     name: "CambodiaTrade",
     type: "Trade Partner",
-    icon: "🤝",
+    logoImage: cambodiatrade,
     address: "No. 45, Preah Norodom Blvd, Phnom Penh",
     hours: "8am–6pm Mon–Sat",
   },
   {
-    name: "We Market Hub",
+    name: "Wee Market Hub",
     type: "Market Hub",
-    icon: "🌐",
+    logoImage: weemarkethub,
     address: "Olympia Mall, Monivong Blvd, Phnom Penh",
     hours: "10am–9pm",
   },
   {
     name: "Wholesale Vegetarian Groceries",
     type: "Wholesaler",
-    icon: "📦",
+    logoImage: wholesalevegetarianogo,
     address: "No. 88, St 182, Phnom Penh",
     hours: "6am–6pm",
   },
   {
     name: "Vegetarian Restaurants",
     type: "Food Service",
-    icon: "🍃",
+    logoImage: vegetarianrestaurant,
     address: "Various locations across Phnom Penh",
     hours: "7am–8pm",
   },
   {
     name: "Sbai Reoung Mart",
     type: "Convenience Store",
-    icon: "🏷️",
+    logoImage: sbaireoungmart,
     address: "No. 12, St 63, Daun Penh, Phnom Penh",
     hours: "6am–9pm",
   },

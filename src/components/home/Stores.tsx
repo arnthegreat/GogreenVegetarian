@@ -53,7 +53,15 @@ export function Stores({
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div className="text-3xl mb-4 group-hover:animate-wiggle inline-block">
-                {s.icon}
+                {s.logoImage ? (
+                  <img
+                    src={s.logoImage}
+                    alt={`${s.name} logo`}
+                    className="h-12 w-24 object-contain"
+                  />
+                ) : (
+                  s.logo
+                )}
               </div>
               <div className="text-[10px] font-semibold tracking-widest uppercase text-[#6B8F5E] mb-1.5">
                 {s.type}

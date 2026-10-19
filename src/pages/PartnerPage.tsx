@@ -112,22 +112,22 @@ export default function PartnerPage({ navigate }: { navigate: (p: Page) => void 
             <div className="grid md:grid-cols-4 gap-6">
               {[
                 {
-                  step: "01",
+                  step: "1",
                   title: "Apply",
                   desc: "Fill out the partnership inquiry form below with your business details.",
                 },
                 {
-                  step: "02",
+                  step: "2",
                   title: "Discuss",
                   desc: "Our team will reach out within 48 hours to understand your needs.",
                 },
                 {
-                  step: "03",
+                  step: "3",
                   title: "Sample",
                   desc: "We'll send you a complimentary product sample pack to try before committing.",
                 },
                 {
-                  step: "04",
+                  step: "4",
                   title: "Launch",
                   desc: "Finalize terms, receive your first order, and start delighting your customers.",
                 },

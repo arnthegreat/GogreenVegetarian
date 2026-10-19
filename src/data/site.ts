@@ -1,10 +1,10 @@
 export const IMG = {
   hero: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1800&h=1000&fit=crop&auto=format",
   heroSlides: [
-    "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&h=1050&fit=crop&auto=format",
-    "https://images.unsplash.com/photo-1484980972926-edee96e0960d?w=800&h=1050&fit=crop&auto=format",
-    "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=800&h=1050&fit=crop&auto=format",
-    "https://images.unsplash.com/photo-1592039017841-65201402f522?w=800&h=1050&fit=crop&auto=format",
+    "src/assets/images/products.png",
+    "src/assets/images/soybean.png",
+    "src/assets/images/sauces.jpg",
+    "src/assets/images/products2.png",
   ],
   about:
     "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&h=700&fit=crop&auto=format",

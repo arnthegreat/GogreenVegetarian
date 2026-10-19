@@ -43,8 +43,8 @@ export function Hero({ navigate }: { navigate: (p: Page) => void }) {
             Made with <span className="shimmer-text">LOVE</span>
           </h1>
           <p className="hero-p text-white/65 text-base sm:text-lg leading-relaxed mb-8 lg:mb-10 max-w-[520px] mx-auto lg:mx-0">
-            Gogreen Vegetarian crafts authentic plant-based products — from
-            traditional Prahok Ktis to fermented soybean pastes — made with
+            Gogreen Vegetarian crafts authentic plant-based products from
+            traditional Prahok Ktis to fermented soybean pastes made with
             compassion, heritage, and zero compromise on quality.
           </p>
           <div className="hero-btns flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 mb-10 lg:mb-14">

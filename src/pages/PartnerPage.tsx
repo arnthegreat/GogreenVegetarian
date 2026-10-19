@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { COUNTRIES, IMG } from '@/data/site'
+import { STORES } from '@/data/catalog'
 import { InnerNav } from '@/components/layout/index'
 import type { Page } from '@/types/navigation'
+
+
 
 export default function PartnerPage({ navigate }: { navigate: (p: Page) => void }) {
   const [sent, setSent] = useState(false)
@@ -26,16 +29,6 @@ export default function PartnerPage({ navigate }: { navigate: (p: Page) => void 
   }
   const fieldClass =
     "w-full px-4 py-3 rounded-xl border border-[#E0D8C8] bg-[#FEFCF7] text-[#1A2E15] text-sm placeholder-[#B0A898] focus:outline-none focus:border-[#6B8F5E] transition-colors"
-  const CURRENT_PARTNERS = [
-    { name: "Aeon Supermarket", type: "Supermarket", icon: "🏬" },
-    { name: "Thai Huot Supermarket", type: "Supermarket", icon: "🛒" },
-    { name: "Chip Mong Supermarket", type: "Supermarket", icon: "🏪" },
-    { name: "CambodiaTrade", type: "Trade Partner", icon: "🤝" },
-    { name: "WEE Market Hub", type: "Market Hub", icon: "🌐" },
-    { name: "Wholesale Vegetarian Groceries", type: "Wholesaler", icon: "📦" },
-    { name: "Vegetarian Restaurants", type: "Food Service", icon: "🍃" },
-    { name: "Sbai Reoung Mart", type: "Convenience Store", icon: "🏷️" },
-  ]
 
   return (
     <div className="min-h-screen bg-[#F8F4EC]">
@@ -152,17 +145,21 @@ export default function PartnerPage({ navigate }: { navigate: (p: Page) => void 
               Our Current Partners
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {CURRENT_PARTNERS.map((p) => (
+              {STORES.map((store) => (
                 <div
-                  key={p.name}
-                  className="bg-[#FEFCF7] border border-[#E0D8C8] rounded-2xl p-4 text-center"
+                  key={store.name}
+                  className="flex flex-col items-center justify-center bg-[#FEFCF7] border border-[#E0D8C8] rounded-2xl p-4 text-center"
                 >
-                  <div className="text-2xl mb-2">{p.icon}</div>
+                  <img
+                    src={store.logoImage}
+                    alt={`${store.name} logo`}
+                    className="h-12 w-full object-contain mb-2"
+                  />
                   <div className="font-medium text-[#1A2E15] text-xs leading-snug">
-                    {p.name}
+                    {store.name}
                   </div>
                   <div className="text-[#6B8F5E] text-[10px] mt-1">
-                    {p.type}
+                    {store.type}
                   </div>
                 </div>
               ))}

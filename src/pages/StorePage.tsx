@@ -1,4 +1,3 @@
-import { IMG } from '@/data/site'
 import { PRODUCTS, type StoreItem } from '@/data/catalog'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useCarousel } from '@/hooks/useCarousel'
@@ -89,7 +88,7 @@ export default function StorePage({
   const productsRef = useReveal()
   const ctaRef = useReveal()
 
-  const storeImages = [IMG.p1, IMG.p2, IMG.p3]
+  const storeImages = store.storeImages
 
   return (
     <div className="min-h-screen bg-[#F8F4EC]">
@@ -101,7 +100,7 @@ export default function StorePage({
         className="reveal relative h-[45vh] md:h-[55vh] overflow-hidden grain"
       >
         <img
-          src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&h=600&fit=crop&auto=format"
+          src={store.heroImage}
           alt={store.name}
           className="absolute inset-0 w-full h-full object-cover"
         />

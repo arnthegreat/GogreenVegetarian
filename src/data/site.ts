@@ -22,12 +22,13 @@ export const IMG = {
     "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700&h=500&fit=crop&auto=format",
   class3:
     "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&h=500&fit=crop&auto=format",
-  p1: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&h=500&fit=crop&auto=format",
-  p2: "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=600&h=500&fit=crop&auto=format",
-  p3: "https://images.unsplash.com/photo-1484980972926-edee96e0960d?w=600&h=500&fit=crop&auto=format",
-  p4: "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600&h=500&fit=crop&auto=format",
-  p5: "https://images.unsplash.com/photo-1592039017841-65201402f522?w=600&h=500&fit=crop&auto=format",
-  p6: "https://images.unsplash.com/photo-1788519694838-c516ca032475?w=600&h=500&fit=crop&auto=format",
+  p1: "src/assets/images/prahokktis.png",
+  p2: "src/assets/images/prahokkapipao.png",
+  p3: "src/assets/images/fermentedsoybeanpaste.png",
+  p4: "src/assets/images/tomatosauce.png",
+  p5: "src/assets/images/chilisauce.png",
+  p6: "src/assets/images/mushroomsauce.png",
+  p7: "src/assets/images/chilisauce2.png",
   partner:
     "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&h=700&fit=crop&auto=format",
 } as const

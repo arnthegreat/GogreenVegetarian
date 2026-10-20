@@ -1,4 +1,4 @@
-import { PRODUCTS, type StoreItem } from '@/data/catalog'
+import { type StoreItem } from '@/data/catalog'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useCarousel } from '@/hooks/useCarousel'
 import { useReveal } from '@/hooks/useReveal'
@@ -199,28 +199,34 @@ export default function StorePage({
           <h2 className="font-sans font-bold text-3xl text-[#1A2E15] mb-8">
             Our Products Available Here
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
-            {PRODUCTS.map((p) => (
-              <div
-                key={p.name}
-                className="flex items-center gap-3 bg-white rounded-2xl border border-[#E0D8C8] p-4"
-              >
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  className="w-12 h-12 rounded-xl object-cover shrink-0"
-                />
-                <div>
-                  <div className="font-semibold text-[#1A2E15] text-sm leading-snug">
-                    {p.name}
+          {store.products.length > 0 ? (
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3">
+              {store.products.map((p) => (
+                <div
+                  key={p.name}
+                  className="flex items-center gap-3 bg-white rounded-2xl border border-[#E0D8C8] p-4"
+                >
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    className="w-12 h-12 rounded-xl object-cover shrink-0"
+                  />
+                  <div>
+                    <div className="font-semibold text-[#1A2E15] text-sm leading-snug">
+                      {p.name}
+                    </div>
+                    <span className="text-[10px] text-[#C4962A] font-semibold uppercase tracking-wide">
+                      {p.tag}
+                    </span>
                   </div>
-                  <span className="text-[10px] text-[#C4962A] font-semibold uppercase tracking-wide">
-                    {p.tag}
-                  </span>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-[#6B6558] text-sm">
+              Product availability has not been listed for this store yet.
+            </p>
+          )}
         </div>
       </section>
 

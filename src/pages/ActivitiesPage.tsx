@@ -16,6 +16,8 @@ const ACTIVITY_ARCHIVE = [
     img: IMG.hero,
     description:
       "Chanlang Prum founded Gogreen Vegetarian in 2020, bringing a passion for plant-based living to Cambodian products and everyday cooking.",
+    cardImageFit: "cover",
+    cardImagePosition: "center",
   },
 ]
 
@@ -91,11 +93,16 @@ export default function ActivitiesPage({ navigate }: { navigate: Navigate }) {
               key={activity.title}
               className="bg-warm-white rounded-2xl overflow-hidden border border-border card-lift"
             >
-              <div className="relative aspect-video overflow-hidden">
+              <div className="relative aspect-video overflow-hidden bg-cream-dark">
                 <img
                   src={activity.img}
                   alt={activity.title}
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full ${
+                    activity.cardImageFit === "contain"
+                      ? "object-contain"
+                      : "object-cover"
+                  }`}
+                  style={{ objectPosition: activity.cardImagePosition }}
                   loading="lazy"
                 />
                 <span className="absolute top-4 left-4 bg-forest text-cream rounded-full px-3 py-1 text-xs font-semibold">

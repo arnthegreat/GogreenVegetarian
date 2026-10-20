@@ -4,40 +4,59 @@ import type { Navigate } from '@/types/navigation'
 
 export const ACTIVITIES = [
   {
-    label: "New Launch",
-    title: "Prahok Ktis Now at Aeon Supermarket",
+    label: "Event",
+    title: "Gogreen at the 2026 Phnom Penh Food Festival",
     date: "Sep 2026",
-    dateTime: "2026-09",
+    dateTime: "2026-09-30",
     description:
-      "Explore our plant-based Prahok Ktis and find Gogreen Vegetarian at Aeon Supermarket in Phnom Penh.",
-    img: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&h=400&fit=crop&auto=format",
+      "Gogreen Vegetarian showcased our plant-based products at the 2026 Phnom Penh Food Festival, connecting with food enthusiasts and promoting sustainable eating.",
+    img: "src/assets/images/penghuotfoodexpo.jpg",
+    cardImageFit: "cover",
+    cardImagePosition: "center",
+  },
+  {
+    label: "Partnership",
+    title: "Sbai Reoung Mart Now Stocks Gogreen Vegetarian Products",
+    date: "Sep 2026",
+    dateTime: "2026-09-24",
+    description:
+      "Gogreen Vegetarian products are now available at Sbai Reoung Mart, expanding our reach to more customers seeking plant-based options.",
+    img: "src/assets/images/sbaireoungupdate.jpg",
+    cardImageFit: "cover",
+    cardImagePosition: "center 30%",
   },
   {
     label: "Event",
-    title: "Gogreen at the 2026 Phnom Penh Food Festival",
-    date: "Aug 2026",
-    dateTime: "2026-08",
+    title: "Gogreen Vegetarian at the 2026 Wee Market Hub Expo",
+    date: "Sep 2026",
+    dateTime: "2026-09-15",
     description:
-      "Follow our activity feed for news of Gogreen Vegetarian at the Phnom Penh Food Festival.",
-    img: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&h=400&fit=crop&auto=format",
-  },
+      "Gogreen Vegetarian participated in the 2026 Penghuot Food Expo, showcasing our plant-based products and engaging with food enthusiasts.",
+    img: "src/assets/images/penghuotfoodexpo.jpg",
+    cardImageFit: "cover",
+    cardImagePosition: "center",
+  }
   {
-    label: "Milestone",
-    title: "100+ Products — Celebrating 6 Years of Craft",
+    label: "Event",
+    title: "Halal Standard Ministry of Commerce",
     date: "Jul 2026",
-    dateTime: "2026-07",
+    dateTime: "2026-07-31",
     description:
-      "Founded in 2020, Gogreen Vegetarian has grown into a Cambodian brand with more than 100 plant-based products.",
-    img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&h=400&fit=crop&auto=format",
+      "Halal Standard Ministry of Commerce organized a special event to promote Halal products in Cambodia. Gogreen Vegetarian proudly participated, showcasing our plant-based offerings.",
+    img: "src/assets/images/halalstandard.jpg",
+    cardImageFit: "cover",
+    cardImagePosition: "center",
   },
   {
-    label: "Community",
-    title: "Founder Chanlang Joins Buddhist Wellness Forum",
-    date: "Jun 2026",
-    dateTime: "2026-06",
+    label: "New Launch",
+    title: "Gogreen Vegetarian Products are Now at Aeon Supermarket",
+    date: "Oct 2025",
+    dateTime: "2025-10-01",
     description:
-      "Our founder’s journey is rooted in compassion, vegetarian living, and a commitment to the community.",
-    img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&h=400&fit=crop&auto=format",
+      "Explore our plant-based Prahok Ktis, Prahok Kapi Pao and Fermented Soybean Paste. Find Gogreen Vegetarian at All Aeon Supermarket in Phnom Penh.",
+    img: "src/assets/images/aeonsupermarket.jpg",
+    cardImageFit: "cover",
+    cardImagePosition: "center",
   },
 ]
 

@@ -47,8 +47,8 @@ export const PRODUCTS = [
   },
   {
     img: IMG.p7,
-    name:"Chili Sauce",
-    desc:"A fiery, aromatic sauce made from fresh chillies and traditional Cambodian spices — perfect for adding heat to any dish.",
+    name:"Chili Sauce (Mild)",
+    desc:"A milder version of our signature chili sauce, balancing heat with rich flavors for those who prefer a gentler kick.",
     tag: "New",
   }
 ]
@@ -59,21 +59,22 @@ export const STORES = [
   {
     name: "All Aeon Mall's Supermarkets",
     type: "Supermarket",
-    logo: "",
     logoImage: aeonlogo,
+    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
     heroImage: "src/assets/images/aeonsupermarket.jpg",
     storeImages: [
       "src/assets/images/aeondisplay3.jpg",
       "src/assets/images/aeondisplay.jpg",
       "src/assets/images/aeondisplay2.jpg",
     ],
-    address: "Ground Floor, AEON Mall Sen Sok, Russian Blvd, Phnom Penh",
+    address: "Every Supermarket of AEON Mall 1, 2, and 3 in Phnom Penh.",
     hours: "9am–10pm",
   },
   {
     name: "Thai Huot Supermarket",
     type: "Supermarket",
     logoImage: thaihuot,
+    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
     heroImage: "src/assets/images/thaihuotsupermarket.jpg",
     storeImages: [
       "src/assets/images/thaihuotdisplay.jpg",
@@ -87,6 +88,7 @@ export const STORES = [
     name: "Chip Mong Supermarket",
     type: "Supermarket",
     logoImage: chipmong,
+    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
     heroImage: "src/assets/images/chipmongsupermarket.jpg",
     storeImages: [
       "src/assets/images/chipmongdisplay.jpg",
@@ -100,6 +102,7 @@ export const STORES = [
     name: "CambodiaTrade",
     type: "Trade Partner",
     logoImage: cambodiatrade,
+    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
     heroImage: "src/assets/images/cambodiatradesupermarket.jpg",
     storeImages: [
       "src/assets/images/cambodiatradedisplay.jpg",
@@ -113,6 +116,7 @@ export const STORES = [
     name: "Wee Market Hub",
     type: "Market Hub",
     logoImage: weemarkethub,
+    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
     heroImage: "src/assets/images/weemarkethubsupermarket.jpg",
     storeImages: [
       "src/assets/images/weemarkethubdisplay.jpg",
@@ -126,11 +130,12 @@ export const STORES = [
     name: "Wholesale Vegetarian Groceries",
     type: "Wholesaler",
     logoImage: wholesalevegetarianogo,
-    heroImage: "/store-banners/wholesale-vegetarian-groceries.jpg",
+    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
+    heroImage: "src/assets/images/wholesalevegetariangroceriesdisplay3.jpg",
     storeImages: [
-      "/store-banners/wholesale-vegetarian-groceries-in-store-1.jpg",
-      "/store-banners/wholesale-vegetarian-groceries-in-store-2.jpg",
-      "/store-banners/wholesale-vegetarian-groceries-in-store-3.jpg",
+      "src/assets/images/wholesalevegetariangroceriesdisplay.jpg",
+      "src/assets/images/wholesalevegetariangroceriesdisplay2.jpg",
+      "src/assets/images/wholesalevegetariangroceriesdisplay3.jpg",
     ],
     address: "No. 88, St 182, Phnom Penh",
     hours: "6am–6pm",
@@ -139,11 +144,12 @@ export const STORES = [
     name: "Vegetarian Restaurants",
     type: "Food Service",
     logoImage: vegetarianrestaurant,
-    heroImage: "/store-banners/vegetarian-restaurants.jpg",
+    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
+    heroImage: "src/assets/Images/vegetarianrestaurantsdisplay.jpg",
     storeImages: [
-      "/store-banners/vegetarian-restaurants-in-store-1.jpg",
-      "/store-banners/vegetarian-restaurants-in-store-2.jpg",
-      "/store-banners/vegetarian-restaurants-in-store-3.jpg",
+      "src/assets/Images/vegetarianrestaurantsdisplay.jpg",
+      "src/assets/Images/vegetarianrestaurantsdisplay2.jpg",
+      "src/assets/Images/vegetarianrestaurantsdisplay3.jpg",
     ],
     address: "Various locations across Phnom Penh",
     hours: "7am–8pm",
@@ -152,6 +158,7 @@ export const STORES = [
     name: "Sbai Reoung Mart",
     type: "Convenience Store",
     logoImage: sbaireoungmart,
+    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
     heroImage: "src/assets/images/sbaireoungmartsupermarket.jpg",
     storeImages: [
       "src/assets/images/sbaireoungmartdisplay.jpg",

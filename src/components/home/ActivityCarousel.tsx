@@ -31,11 +31,11 @@ export const ACTIVITIES = [
     date: "Sep 2026",
     dateTime: "2026-09-15",
     description:
-      "Gogreen Vegetarian participated in the 2026 Penghuot Food Expo, showcasing our plant-based products and engaging with food enthusiasts.",
-    img: "src/assets/images/penghuotfoodexpo.jpg",
+      "Gogreen Vegetarian participated in the 2026 Wee Market Hub Expo, showcasing our plant-based products and engaging with food enthusiasts.",
+    img: "src/assets/images/weemarkethubexpo.jpg",
     cardImageFit: "cover",
     cardImagePosition: "center",
-  }
+  },
   {
     label: "Event",
     title: "Halal Standard Ministry of Commerce",
@@ -67,7 +67,7 @@ export function ActivityCarousel({ navigate }: { navigate: Navigate }) {
     prev,
     next,
     interactionProps,
-  } = useCarousel(ACTIVITIES.length, 4000)
+  } = useCarousel(ACTIVITIES.length, 2000) // 2 seconds auto-advance
 
   const activity = ACTIVITIES[current]
 

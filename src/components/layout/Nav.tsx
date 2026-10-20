@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { LeafIcon } from '@/components/icons'
+import gogreenLogo from '@/assets/logo/gogreenlogo.png'
 import type { Page } from '@/types/navigation'
 
 export default function Nav({ navigate }: { navigate: (p: Page) => void }) {
@@ -18,11 +18,13 @@ export default function Nav({ navigate }: { navigate: (p: Page) => void }) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 lg:h-20 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-full bg-[#A8C49A]/20 flex items-center justify-center group-hover:bg-[#A8C49A]/30 transition-colors">
-            <LeafIcon className="w-4 h-4 text-[#A8C49A]" />
-          </div>
-          <span className="font-sans text-lg font-bold tracking-wide">
+        <a href="#home" className="flex items-center">
+          <img
+            src={gogreenLogo}
+            alt="Gogreen Vegetarian"
+            className="h-14 w-14 lg:h-16 lg:w-16 object-contain"
+          />
+          <span className="font-sans text-sm font-bold tracking-wide ml-1">
             <span style={{ color: "#C4962A" }}>Go</span>
             <span style={{ color: "#A8C49A" }}>green</span>{" "}
             <span style={{ color: "#C4962A" }}>Vegetarian</span>

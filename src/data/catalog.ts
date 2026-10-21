@@ -72,7 +72,7 @@ export const STORES = [
   },
   {
     name: "Thai Huot Supermarket",
-    type: "Supermarket",
+    type: "Convenience Store",
     logoImage: thaihuot,
     products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
     heroImage: "src/assets/images/thaihuotsupermarket.jpg",
@@ -82,7 +82,7 @@ export const STORES = [
       "src/assets/images/thaihuotsupermarket.jpg",
     ],
     address: "123 Monivong Blvd, BKK1, Phnom Penh",
-    hours: "7am–9pm",
+    hours: "7am–9:30pm",
   },
   {
     name: "Chip Mong Supermarket",
@@ -96,7 +96,7 @@ export const STORES = [
       "src/assets/images/chipmongdisplay3.jpg",
     ],
     address: "Chip Mong 271 Mall, St 271, Phnom Penh",
-    hours: "8am–9pm",
+    hours: "7am–10pm",
   },
   {
     name: "CambodiaTrade",
@@ -110,7 +110,7 @@ export const STORES = [
       "src/assets/images/cambodiatradedisplay3.jpg",
     ],
     address: "No. 45, Preah Norodom Blvd, Phnom Penh",
-    hours: "8am–6pm Mon–Sat",
+    hours: "8am–5pm Mon–Sat",
   },
   {
     name: "Wee Market Hub",
@@ -125,6 +125,20 @@ export const STORES = [
     ],
     address: "Olympia Mall, Monivong Blvd, Phnom Penh",
     hours: "10am–9pm",
+  },
+  {
+    name: "Sbai Reoung Mart",
+    type: "Convenience Store",
+    logoImage: sbaireoungmart,
+    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
+    heroImage: "src/assets/images/sbaireoungmartsupermarket.jpg",
+    storeImages: [
+      "src/assets/images/sbaireoungmartdisplay.jpg",
+      "src/assets/images/sbaireoungmartdisplay2.jpg",
+      "src/assets/images/sbaireoungmartdisplay3.jpg",
+    ],
+    address: "443 Street 271, Phnom Penh 12150",
+    hours: "6am–11pm",
   },
   {
     name: "Wholesale Vegetarian Groceries",
@@ -153,20 +167,6 @@ export const STORES = [
     ],
     address: "Various locations across Phnom Penh",
     hours: "7am–8pm",
-  },
-  {
-    name: "Sbai Reoung Mart",
-    type: "Convenience Store",
-    logoImage: sbaireoungmart,
-    products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
-    heroImage: "src/assets/images/sbaireoungmartsupermarket.jpg",
-    storeImages: [
-      "src/assets/images/sbaireoungmartdisplay.jpg",
-      "src/assets/images/sbaireoungmartdisplay2.jpg",
-      "src/assets/images/sbaireoungmartdisplay3.jpg",
-    ],
-    address: "No. 12, St 63, Daun Penh, Phnom Penh",
-    hours: "6am–9pm",
   },
 ]
 

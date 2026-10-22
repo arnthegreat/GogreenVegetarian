@@ -18,9 +18,9 @@ const FOUNDER_STORY = [
 ]
 
 const FOUNDER_FACTS = [
-  { label: "Founded", value: "July 18, 2020" },
-  { label: "Vegetarian since", value: "16+ Years" },
-  { label: "Signature products", value: "3 + Growing" },
+  { label: "Founded", value: "2020" },
+  { label: "Vegetarian since", value: "2008" },
+  { label: "Signature products", value: "6 + Growing" },
   { label: "Retail presence", value: "Cambodia-wide" },
 ]
 
@@ -80,7 +80,7 @@ function Founder() {
                   key={src}
                   src={src}
                   alt={`Chanlang Prum — photo ${i + 1}`}
-                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
                   style={{ opacity: i === current ? 1 : 0 }}
                 />
               ))}
@@ -243,16 +243,16 @@ export default function FounderPage({ navigate }: { navigate: (p: Page) => void 
       <InnerNav navigate={navigate} />
 
       {/* Hero banner — full color image with text overlay */}
-      <div className="relative h-[55vh] md:h-[70vh] overflow-hidden">
+      <div className="relative h-[55vh] md:h-[85vh] overflow-hidden">
         <img
-          src={IMG.founderSlides[0]}
+          src={IMG.founderBanner}
           alt="Chanlang Prum, Founder of Gogreen Vegetarian"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-[center_37%]"
         />
         {/* Only gradient at bottom for text legibility */}
         <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-[#1A2E15] to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 px-6 lg:px-20 pb-10 lg:pb-16">
-          <p className="hero-badge text-[#A8C49A] text-xs font-semibold tracking-widest uppercase mb-3">
+          <p className="hero-badge text-[#A8C49A] text-lg font-semibold tracking-widest uppercase mb-3">
             The Founder's Story
           </p>
           <h1
@@ -262,7 +262,6 @@ export default function FounderPage({ navigate }: { navigate: (p: Page) => void 
                 "'Century Gothic', CenturyGothic, AppleGothic, Poppins, sans-serif",
             }}
           >
-            THE FOUNDER'S STORY
           </h1>
         </div>
       </div>

@@ -7,21 +7,20 @@ export const IMG = {
     "src/assets/images/products2.png",
   ],
   about:
-    "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=900&h=700&fit=crop&auto=format",
+    "src/assets/images/aboutgogreen.jpg",
   aboutPage1:
-    "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=900&h=600&fit=crop&auto=format",
+    "src/assets/images/soybean.png",
+  founderBanner:
+    "src/assets/images/chanlangfounder.png",
   founderSlides: [
-    "https://images.unsplash.com/photo-1625631980722-b728f9cf1036?w=800&h=1000&fit=crop&auto=format",
-    "https://images.unsplash.com/photo-1625631980777-823fc2938950?w=800&h=1000&fit=crop&auto=format",
-    "https://images.unsplash.com/photo-1625631980683-825234bfb7d5?w=800&h=1000&fit=crop&auto=format",
-    "https://images.unsplash.com/photo-1743807059700-1d4d97003972?w=800&h=1000&fit=crop&auto=format",
+    "src/assets/images/chanlang.jpg",
+    "src/assets/images/chanlang2.jpg",
+    "src/assets/images/chanlang3.jpg",
+    "src/assets/images/chanlang4.jpg",
   ],
-  class1:
-    "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=700&h=500&fit=crop&auto=format",
-  class2:
-    "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=700&h=500&fit=crop&auto=format",
-  class3:
-    "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=700&h=500&fit=crop&auto=format",
+  class1: "src/assets/images/comingsoon.jpg",
+  class2: "src/assets/images/comingsoon.jpg",
+  class3: "src/assets/images/comingsoon.jpg",
   p1: "src/assets/images/prahokktis.png",
   p2: "src/assets/images/prahokkapipao.png",
   p3: "src/assets/images/fermentedsoybeanpaste.png",

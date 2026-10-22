@@ -157,23 +157,20 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
           </div>
           <div
             ref={missionCardsRef as React.RefObject<HTMLDivElement>}
-            className="reveal grid md:grid-cols-3 gap-6"
+            className="reveal grid md:grid-cols-3 gap-10"
           >
             {[
               {
-                icon: "🎯",
                 title: "Our Mission",
                 body: "To create authentic, delicious plant-based Cambodian products that make healthy, compassionate living easy and accessible — without sacrificing flavor, culture, or tradition.",
                 delay: 0,
               },
               {
-                icon: "🌏",
                 title: "Our Vision",
                 body: "To become Southeast Asia's most trusted plant-based food brand, bringing the rich culinary heritage of Cambodia to tables across the region and beyond.",
                 delay: 120,
               },
               {
-                icon: "🌿",
                 title: "Our Values",
                 body: "Compassion for all living beings. Respect for Cambodian culture. Commitment to health and sustainability. Transparency in every ingredient. Courage to build something meaningful.",
                 delay: 240,
@@ -209,7 +206,7 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
                 What We Make
               </p>
               <h2 className="font-sans font-bold text-4xl text-[#1A2E15] leading-tight mb-6">
-                100+ Plant-Based Products Rooted in{" "}
+                All Plant-Based Products Rooted in{" "}
                 <span className="text-[#2D5016]">Cambodian Tradition</span>
               </h2>
               <p className="text-[#6B6558] leading-relaxed text-lg mb-8">
@@ -228,11 +225,11 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
               ref={whatImgRef as React.RefObject<HTMLDivElement>}
               className="reveal-right relative"
             >
-              <div className="rounded-[2rem] overflow-hidden aspect-[4/3] bg-[#A8C49A]">
+              <div className="rounded-[2rem] overflow-hidden aspect-[3/3] bg-[#A8C49A]">
                 <img
                   src={IMG.aboutPage1}
                   alt="Gogreen plant-based products"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full inset-0 object-cover object-[center_0%] hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="absolute -top-5 -left-4 bg-[#C4962A] text-white rounded-2xl px-5 py-3 shadow-2xl hidden lg:block">

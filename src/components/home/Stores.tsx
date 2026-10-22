@@ -52,16 +52,12 @@ export function Stores({
               className="card-lift group bg-[#FEFCF7] hover:bg-[#F0EAD8] border border-[#E0D8C8] hover:border-[#A8C49A]/60 rounded-2xl p-6 transition-all duration-300 cursor-pointer"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="text-3xl mb-4 group-hover:animate-wiggle inline-block">
-                {s.logoImage ? (
-                  <img
-                    src={s.logoImage}
-                    alt={`${s.name} logo`}
-                    className="h-12 w-24 object-contain"
-                  />
-                ) : (
-                  s.logo
-                )}
+              <div className="mb-4 inline-block group-hover:animate-wiggle">
+                <img
+                  src={s.logoImage}
+                  alt={`${s.name} logo`}
+                  className="h-12 w-24 object-contain"
+                />
               </div>
               <div className="text-[10px] font-semibold tracking-widest uppercase text-[#6B8F5E] mb-1.5">
                 {s.type}

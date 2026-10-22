@@ -162,16 +162,19 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
             {[
               {
                 title: "Our Mission",
+                icon: "",
                 body: "To create authentic, delicious plant-based Cambodian products that make healthy, compassionate living easy and accessible — without sacrificing flavor, culture, or tradition.",
                 delay: 0,
               },
               {
                 title: "Our Vision",
+                icon: "",
                 body: "To become Southeast Asia's most trusted plant-based food brand, bringing the rich culinary heritage of Cambodia to tables across the region and beyond.",
                 delay: 120,
               },
               {
                 title: "Our Values",
+                icon: "",
                 body: "Compassion for all living beings. Respect for Cambodian culture. Commitment to health and sustainability. Transparency in every ingredient. Courage to build something meaningful.",
                 delay: 240,
               },

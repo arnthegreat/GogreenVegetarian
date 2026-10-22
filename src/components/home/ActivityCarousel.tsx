@@ -1,5 +1,6 @@
 import { useCarousel } from '@/hooks/useCarousel'
 import { ArrowRight, ChevronLeft, ChevronRight } from '@/components/icons'
+import { imageAsset } from '@/lib/imageAssets'
 import type { Navigate } from '@/types/navigation'
 
 export const ACTIVITIES = [
@@ -10,7 +11,7 @@ export const ACTIVITIES = [
     dateTime: "2026-09-30",
     description:
       "Gogreen Vegetarian showcased our plant-based products at the 2026 Phnom Penh Food Festival, connecting with food enthusiasts and promoting sustainable eating.",
-    img: "src/assets/images/penghuotfoodexpo.jpg",
+    img: imageAsset("penghuotfoodexpo.jpg"),
     cardImageFit: "cover",
     cardImagePosition: "center",
   },
@@ -21,7 +22,7 @@ export const ACTIVITIES = [
     dateTime: "2026-09-24",
     description:
       "Gogreen Vegetarian products are now available at Sbai Reoung Mart, expanding our reach to more customers seeking plant-based options.",
-    img: "src/assets/images/sbaireoungupdate.jpg",
+    img: imageAsset("sbaireoungupdate.jpg"),
     cardImageFit: "cover",
     cardImagePosition: "center 30%",
   },
@@ -32,7 +33,7 @@ export const ACTIVITIES = [
     dateTime: "2026-09-15",
     description:
       "Gogreen Vegetarian participated in the 2026 Wee Market Hub Expo, showcasing our plant-based products and engaging with food enthusiasts.",
-    img: "src/assets/images/weemarkethubexpo.jpg",
+    img: imageAsset("weemarkethubexpo.jpg"),
     cardImageFit: "cover",
     cardImagePosition: "center",
   },
@@ -43,7 +44,7 @@ export const ACTIVITIES = [
     dateTime: "2026-07-31",
     description:
       "Halal Standard Ministry of Commerce organized a special event to promote Halal products in Cambodia. Gogreen Vegetarian proudly participated, showcasing our plant-based offerings.",
-    img: "src/assets/images/halalstandard.jpg",
+    img: imageAsset("halalstandard.jpg"),
     cardImageFit: "cover",
     cardImagePosition: "center",
   },
@@ -54,7 +55,7 @@ export const ACTIVITIES = [
     dateTime: "2025-10-01",
     description:
       "Explore our plant-based Prahok Ktis, Prahok Kapi Pao and Fermented Soybean Paste. Find Gogreen Vegetarian at All Aeon Supermarket in Phnom Penh.",
-    img: "src/assets/images/aeonsupermarket.jpg",
+    img: imageAsset("aeonsupermarket.jpg"),
     cardImageFit: "cover",
     cardImagePosition: "center",
   },

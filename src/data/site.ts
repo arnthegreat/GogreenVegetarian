@@ -1,33 +1,35 @@
+import { imageAsset } from '@/lib/imageAssets'
+
 export const IMG = {
   hero: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1800&h=1000&fit=crop&auto=format",
   heroSlides: [
-    "src/assets/images/products.png",
-    "src/assets/images/soybean.png",
-    "src/assets/images/sauces.jpg",
-    "src/assets/images/products2.png",
+    imageAsset("products.png"),
+    imageAsset("soybean.png"),
+    imageAsset("sauces.jpg"),
+    imageAsset("products2.png"),
   ],
   about:
-    "src/assets/images/aboutgogreen.jpg",
+    imageAsset("aboutgogreen.jpg"),
   aboutPage1:
-    "src/assets/images/soybean.png",
+    imageAsset("soybean.png"),
   founderBanner:
-    "src/assets/images/chanlangfounder.png",
+    imageAsset("chanlangfounder.png"),
   founderSlides: [
-    "src/assets/images/chanlang.jpg",
-    "src/assets/images/chanlang2.jpg",
-    "src/assets/images/chanlang3.jpg",
-    "src/assets/images/chanlang4.jpg",
+    imageAsset("chanlang.jpg"),
+    imageAsset("chanlang2.jpg"),
+    imageAsset("chanlang3.jpg"),
+    imageAsset("chanlang4.jpg"),
   ],
-  class1: "src/assets/images/comingsoon.jpg",
-  class2: "src/assets/images/comingsoon.jpg",
-  class3: "src/assets/images/comingsoon.jpg",
-  p1: "src/assets/images/prahokktis.png",
-  p2: "src/assets/images/prahokkapipao.png",
-  p3: "src/assets/images/fermentedsoybeanpaste.png",
-  p4: "src/assets/images/tomatosauce.png",
-  p5: "src/assets/images/chilisauce.png",
-  p6: "src/assets/images/mushroomsauce.png",
-  p7: "src/assets/images/chilisauce2.png",
+  class1: imageAsset("comingsoon.jpg"),
+  class2: imageAsset("comingsoon.jpg"),
+  class3: imageAsset("comingsoon.jpg"),
+  p1: imageAsset("prahokktis.png"),
+  p2: imageAsset("prahokkapipao.png"),
+  p3: imageAsset("fermentedsoybeanpaste.png"),
+  p4: imageAsset("tomatosauce.png"),
+  p5: imageAsset("chilisauce.png"),
+  p6: imageAsset("mushroomsauce.png"),
+  p7: imageAsset("chilisauce2.png"),
   partner:
     "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&h=700&fit=crop&auto=format",
 } as const

@@ -1,11 +1,27 @@
 import { useState } from 'react'
+import { submitInquiry } from '@/lib/submitInquiry'
 
 export default function NotifyModal({ onClose }: { onClose: () => void }) {
   const [email, setEmail] = useState("")
   const [sent, setSent] = useState(false)
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState("")
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setSubmitError("")
+    setSubmitting(true)
+    try {
+      await submitInquiry({ type: 'class-notification', email })
+      setSent(true)
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'We could not submit your request. Please try again later.',
+      )
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -40,11 +56,11 @@ export default function NotifyModal({ onClose }: { onClose: () => void }) {
           <div className="text-center py-6">
             <div className="text-5xl mb-4">🌿</div>
             <h3 className="font-display text-xl font-semibold text-[#2D5016] mb-2">
-              You're on the list!
+              Request Sent
             </h3>
             <p className="text-[#6B6558] text-sm">
-              We'll email you as soon as our cooking classes are ready to
-              launch.
+              The founder has received your email and your interest in cooking
+              classes.
             </p>
             <button
               onClick={onClose}
@@ -82,11 +98,17 @@ export default function NotifyModal({ onClose }: { onClose: () => void }) {
                   className="w-full px-4 py-3 rounded-xl border border-[#E0D8C8] bg-[#FEFCF7] text-[#1A2E15] text-sm placeholder-[#B0A898] focus:outline-none focus:border-[#6B8F5E] transition-colors"
                 />
               </div>
+              {submitError && (
+                <p role="alert" className="text-sm text-red-700">
+                  {submitError}
+                </p>
+              )}
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-full bg-[#2D5016] hover:bg-[#3D6822] text-white font-semibold transition-colors"
+                disabled={submitting}
+                className="w-full py-3.5 rounded-full bg-[#2D5016] hover:bg-[#3D6822] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-colors"
               >
-                Notify Me When Classes Launch
+                {submitting ? 'Submitting…' : 'Notify Me When Classes Launch'}
               </button>
             </form>
           </>

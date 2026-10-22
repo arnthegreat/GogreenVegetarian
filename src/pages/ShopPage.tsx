@@ -50,7 +50,7 @@ export default function ShopComingSoonPage({ navigate }: { navigate: (p: Page) =
                 </span>
               </a>
               <a
-                href="mailto:hello@gogreen.com.kh"
+                href="mailto:send2alang@yahoo.com"
                 className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
               >
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">

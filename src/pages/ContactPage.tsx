@@ -2,9 +2,12 @@ import { useState } from 'react'
 import { COUNTRIES } from '@/data/site'
 import { InnerNav } from '@/components/layout/index'
 import type { Page } from '@/types/navigation'
+import { submitInquiry } from '@/lib/submitInquiry'
 
 export default function ContactPage({ navigate }: { navigate: (p: Page) => void }) {
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState("")
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -20,9 +23,22 @@ export default function ContactPage({ navigate }: { navigate: (p: Page) => void 
       e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
     ) =>
       setForm((f) => ({ ...f, [k]: e.target.value }))
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setSubmitError("")
+    setSubmitting(true)
+    try {
+      await submitInquiry({ type: 'contact', ...form })
+      setSent(true)
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'We could not send your message. Please try again later.',
+      )
+    } finally {
+      setSubmitting(false)
+    }
   }
   const selectedCountry = COUNTRIES.find((c) => c.name === form.country)
   const fieldClass =
@@ -50,7 +66,7 @@ export default function ContactPage({ navigate }: { navigate: (p: Page) => void 
             {[
               { icon: "📍", label: "Location", val: "Phnom Penh, Cambodia" },
               { icon: "📞", label: "Phone", val: "+855 12 345 678" },
-              { icon: "✉️", label: "Email", val: "hello@gogreen.com.kh" },
+              { icon: "✉️", label: "Email", val: "send2alang@yahoo.com" },
               { icon: "🕘", label: "Response time", val: "Within 24 hours" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
@@ -201,11 +217,17 @@ export default function ContactPage({ navigate }: { navigate: (p: Page) => void 
                   className={`${fieldClass} resize-none`}
                 />
               </div>
+              {submitError && (
+                <p role="alert" className="text-sm text-red-700">
+                  {submitError}
+                </p>
+              )}
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-[#2D5016] hover:bg-[#3D6822] text-white font-semibold transition-colors flex items-center justify-center gap-2"
+                disabled={submitting}
+                className="w-full py-4 rounded-full bg-[#2D5016] hover:bg-[#3D6822] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-colors flex items-center justify-center gap-2"
               >
-                Send Message
+                {submitting ? 'Sending…' : 'Send Message'}
               </button>
               <p className="text-center text-[#B0A898] text-xs">
                 Or call us at{" "}

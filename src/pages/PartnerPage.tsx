@@ -3,11 +3,12 @@ import { COUNTRIES, IMG } from '@/data/site'
 import { STORES } from '@/data/catalog'
 import { InnerNav } from '@/components/layout/index'
 import type { Page } from '@/types/navigation'
-
-
+import { submitInquiry } from '@/lib/submitInquiry'
 
 export default function PartnerPage({ navigate }: { navigate: (p: Page) => void }) {
   const [sent, setSent] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState("")
   const [form, setForm] = useState({
     business: "",
     name: "",
@@ -23,9 +24,31 @@ export default function PartnerPage({ navigate }: { navigate: (p: Page) => void 
       e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
     ) =>
       setForm((f) => ({ ...f, [k]: e.target.value }))
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
+    setSubmitError("")
+    setSubmitting(true)
+    try {
+      await submitInquiry({
+        type: 'partnership',
+        business: form.business,
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        country: form.country,
+        businessType: form.type,
+        message: form.message,
+      })
+      setSent(true)
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'We could not send your inquiry. Please try again later.',
+      )
+    } finally {
+      setSubmitting(false)
+    }
   }
   const fieldClass =
     "w-full px-4 py-3 rounded-xl border border-[#E0D8C8] bg-[#FEFCF7] text-[#1A2E15] text-sm placeholder-[#B0A898] focus:outline-none focus:border-[#6B8F5E] transition-colors"
@@ -320,11 +343,17 @@ export default function PartnerPage({ navigate }: { navigate: (p: Page) => void 
                     className={`${fieldClass} resize-none`}
                   />
                 </div>
+                {submitError && (
+                  <p role="alert" className="text-sm text-red-700">
+                    {submitError}
+                  </p>
+                )}
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-full bg-[#2D5016] hover:bg-[#3D6822] text-white font-semibold transition-colors flex items-center justify-center gap-2"
+                  disabled={submitting}
+                  className="w-full py-4 rounded-full bg-[#2D5016] hover:bg-[#3D6822] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-colors flex items-center justify-center gap-2"
                 >
-                  Submit Partnership Inquiry
+                  {submitting ? 'Sending…' : 'Submit Partnership Inquiry'}
                 </button>
               </form>
             )}

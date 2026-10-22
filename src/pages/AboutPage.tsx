@@ -234,7 +234,6 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
               </div>
               <div className="absolute -top-5 -left-4 bg-[#C4962A] text-white rounded-2xl px-5 py-3 shadow-2xl hidden lg:block">
                 <div className="font-display text-sm font-semibold">
-                  100+ Products
                 </div>
                 <div className="text-white/75 text-xs mt-0.5">
                   All plant-based

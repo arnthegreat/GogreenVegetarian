@@ -25,9 +25,9 @@ export default function Nav({ navigate }: { navigate: (p: Page) => void }) {
             className="h-14 w-14 lg:h-16 lg:w-16 object-contain"
           />
           <span className="font-sans text-sm font-bold tracking-wide ml-1">
-            <span style={{ color: "#C4962A" }}>Go</span>
-            <span style={{ color: "#A8C49A" }}>green</span>{" "}
-            <span style={{ color: "#C4962A" }}>Vegetarian</span>
+            <span style={{ color: "#C4962A" }}>GO</span>
+            <span style={{ color: "#A8C49A" }}>GREEN</span>{" "}
+            <span style={{ color: "#C4962A" }}>VEGETARIAN</span>
           </span>
         </a>
 

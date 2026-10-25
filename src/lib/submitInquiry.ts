@@ -1,4 +1,4 @@
-import emailjs from "@emailjs/browser"
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser"
 
 export type ContactInquiry = {
   type: "contact"
@@ -178,8 +178,14 @@ export async function submitInquiry(inquiry: Inquiry): Promise<void> {
   } catch (error) {
     console.error("EmailJS could not send the inquiry.", error)
 
+    if (error instanceof EmailJSResponseStatus) {
+      throw new Error(
+        `EmailJS error ${error.status}: ${error.text || "The request was rejected."} Check the EmailJS service, template, public key, and allowed domains.`,
+      )
+    }
+
     throw new Error(
-      "We could not send your message. Please try again later or contact us directly by email.",
+      "Could not connect to EmailJS. Check your internet connection and EmailJS allowed domains, then try again.",
     )
   }
 }

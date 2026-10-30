@@ -17,13 +17,6 @@ const FOUNDER_STORY = [
   "Gogreen is more than a business. It is a lifelong commitment to health, compassion, sustainability, and positive impact.",
 ]
 
-const FOUNDER_FACTS = [
-  { label: "Founded", value: "2020" },
-  { label: "Vegetarian since", value: "2008" },
-  { label: "Signature products", value: "6 + Growing" },
-  { label: "Retail presence", value: "Cambodia-wide" },
-]
-
 function Founder() {
   const [current, setCurrent] = useState(0)
   const slides = IMG.founderSlides
@@ -68,13 +61,13 @@ function Founder() {
             Chanlang Prum
           </h2>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-8 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(360px,0.8fr)_1.2fr] gap-8 lg:gap-14 items-stretch">
           {/* Portrait — dots live inside the image container */}
           <div
             ref={portraitRef as React.RefObject<HTMLDivElement>}
             className="reveal-left relative shrink-0"
           >
-            <div className="rounded-[2rem] overflow-hidden aspect-[3/4] max-h-[420px] lg:max-h-none bg-[#2D5016] relative">
+            <div className="rounded-[2rem] overflow-hidden aspect-[3/4] max-h-[520px] lg:aspect-auto lg:h-full lg:min-h-[560px] lg:max-h-none bg-[#2D5016] relative">
               {slides.map((src, i) => (
                 <img
                   key={src}
@@ -111,23 +104,6 @@ function Founder() {
                   />
                 ))}
               </div>
-            </div>
-            {/* Fact cards sit cleanly below the portrait — no overlap */}
-            <div className="mt-5 grid grid-cols-2 gap-2">
-              {FOUNDER_FACTS.map((f, i) => (
-                <div
-                  key={f.label}
-                  className="card-lift bg-white/5 border border-white/10 rounded-xl p-3 hover:border-[#A8C49A]/30 transition-colors"
-                  style={{ transitionDelay: `${i * 80}ms` }}
-                >
-                  <div className="text-[10px] font-semibold text-[#6B8F5E] uppercase tracking-wider mb-0.5">
-                    {f.label}
-                  </div>
-                  <div className="font-display text-sm font-semibold text-white">
-                    {f.value}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 

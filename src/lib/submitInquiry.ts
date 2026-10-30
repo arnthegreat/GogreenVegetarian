@@ -72,7 +72,10 @@ type EmailTemplateParams = {
 
 const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID?.trim()
 
-const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim()
+const contactAutoReplyTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.trim()
+
+const contactNotificationTemplateId =
+  import.meta.env.VITE_EMAILJS_CONTACT_NOTIFICATION_TEMPLATE_ID?.trim()
 
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim()
 
@@ -159,33 +162,50 @@ function getTemplateParams(inquiry: Inquiry): EmailTemplateParams {
 }
 
 export async function submitInquiry(inquiry: Inquiry): Promise<void> {
-  if (!serviceId || !templateId || !publicKey) {
+  if (
+    !serviceId ||
+    !contactNotificationTemplateId ||
+    !publicKey ||
+    (inquiry.type === "contact" && !contactAutoReplyTemplateId)
+  ) {
     throw new Error(
       "Email is not configured yet. Please contact us directly by email.",
     )
   }
 
-  try {
-    await emailjs.send(
-      serviceId,
+  const params = getTemplateParams(inquiry)
 
-      templateId,
+  const send = async (templateId: string): Promise<void> => {
+    try {
+      await emailjs.send(serviceId, templateId, params, { publicKey })
+    } catch (error) {
+      console.error("EmailJS could not send the inquiry.", error)
 
-      getTemplateParams(inquiry),
+      if (error instanceof EmailJSResponseStatus) {
+        throw new Error(
+          `EmailJS error ${error.status}: ${error.text || "The request was rejected."} Check the EmailJS service, template, public key, and allowed domains.`,
+        )
+      }
 
-      { publicKey },
-    )
-  } catch (error) {
-    console.error("EmailJS could not send the inquiry.", error)
-
-    if (error instanceof EmailJSResponseStatus) {
       throw new Error(
-        `EmailJS error ${error.status}: ${error.text || "The request was rejected."} Check the EmailJS service, template, public key, and allowed domains.`,
+        "Could not connect to EmailJS. Check your internet connection and EmailJS allowed domains, then try again.",
+      )
+    }
+  }
+
+  try {
+    await send(contactNotificationTemplateId)
+
+    if (inquiry.type === "contact" && contactAutoReplyTemplateId) {
+      await send(contactAutoReplyTemplateId)
+    }
+  } catch (error) {
+    if (inquiry.type === "contact") {
+      throw new Error(
+        `Your message may already have reached us, but an email could not be sent: ${error instanceof Error ? error.message : "Please try again later."}`,
       )
     }
 
-    throw new Error(
-      "Could not connect to EmailJS. Check your internet connection and EmailJS allowed domains, then try again.",
-    )
+    throw error
   }
 }

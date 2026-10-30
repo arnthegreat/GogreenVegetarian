@@ -1,20 +1,24 @@
 # EmailJS setup
 
 The contact, partnership, and cooking-class notification forms send directly
-from the browser using the EmailJS SDK. No email API server or private email
-provider key is used.
+from the browser using the EmailJS SDK. A Contact Us submission sends one
+notification to the business and one automatic reply to the sender. No email
+API server or private email provider key is used.
 
 ## Configure EmailJS
 
 1. Create an EmailJS account and connect an email service in the
    [EmailJS dashboard](https://dashboard.emailjs.com/).
-2. Create one email template for all three inquiry forms. Set its recipients in
-   the template's **To Email** field, for example:
-   `send2alang@yahoo.com, aaronbonaobrakh@gmail.com`. Keep recipients in the
-   EmailJS template rather than accepting them from the browser.
-3. Set the template's **Reply To** field to `{{reply_to}}` and **Subject** to
-   `{{subject}}`.
-4. Add these variables to the template content:
+2. Configure `VITE_EMAILJS_TEMPLATE_ID` as the Contact Us auto-reply template.
+   Set its **To Email** field to `{{email}}` so the person who submitted the
+   form receives the reply. Include a short confirmation and any response-time
+   expectations in its content.
+3. Configure `VITE_EMAILJS_CONTACT_NOTIFICATION_TEMPLATE_ID` as the business
+   notification template. Set its **To Email** field to your business email
+   address in the EmailJS dashboard. Keep this recipient in the template
+   rather than accepting it from the browser.
+4. The auto-reply can use `{{name}}`, and the notification template can use
+   these inquiry variables:
 
    - `{{inquiry_type}}`
    - `{{name}}`
@@ -45,12 +49,16 @@ provider key is used.
    {{message}}
    ```
 
-5. Copy the service ID, template ID, and public key from EmailJS.
-6. In the Vercel project, add these environment variables for every environment
+5. Set the notification template's **Reply To** field to `{{reply_to}}` so you
+   can reply directly to the sender. The notification's subject can use
+   `{{subject}}`; choose a suitable subject for the auto-reply separately.
+6. Copy the service ID, both template IDs, and public key from EmailJS.
+7. In the Vercel project, add these environment variables for every environment
    you deploy. Then redeploy:
 
    - `VITE_EMAILJS_SERVICE_ID`
-   - `VITE_EMAILJS_TEMPLATE_ID`
+   - `VITE_EMAILJS_TEMPLATE_ID` (Contact Us auto-reply)
+   - `VITE_EMAILJS_CONTACT_NOTIFICATION_TEMPLATE_ID` (business notification)
    - `VITE_EMAILJS_PUBLIC_KEY`
 
    Vite embeds `VITE_*` variables into the website at build time, so set them
@@ -59,8 +67,8 @@ provider key is used.
    in a `VITE_*` variable.
 
 For local development, create `.env.local` in the project root (next to
-`package.json`), copy the three variable names from `.env.example`, fill in
-their values, and restart the Vite server. Vite loads `.env.local` when it
+`package.json`), copy the variable names from `.env.example`, fill in their
+values, and restart the Vite server. Vite loads `.env.local` when it
 starts; `.env.example` is only a template and is not loaded automatically.
 The `.env.local` file is ignored by Git.
 

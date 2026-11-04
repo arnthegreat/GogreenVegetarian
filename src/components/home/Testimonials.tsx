@@ -1,54 +1,53 @@
 import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from '@/components/icons'
 import { useReveal } from '@/hooks/useReveal'
+import { imageAsset } from '@/lib/imageAssets'
 
 const TESTIMONIALS = [
   {
-    name: "Srey Leak",
-    role: "Health-Conscious Home Cook · Phnom Penh",
+    name: "Sakura Engly",
+    role: "Health-Conscious · Phnom Penh",
     quote:
-      "Gogreen's Prahok Ktis completely changed how I cook. The flavor is so authentic — my family couldn't tell the difference. Finally, a plant-based product that truly respects Cambodian taste.",
+      "Recommended for somebody looking for vegetarian food in Phnom Penh city. The owner, Madam Chanlang Prum, and the staff are very friendly and helpful and have positive energy.",
     rating: 5,
     photos: [
-      "https://images.unsplash.com/photo-1625631980722-b728f9cf1036?w=900&h=700&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1625631980634-397b9e9a73f9?w=900&h=700&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1780277814234-c3821a9d3f08?w=900&h=700&fit=crop&auto=format",
+      imageAsset("sakura-review-1.jpg"),
+      imageAsset("sakura-review-2.jpg"),
+      imageAsset("sakura-review-3.jpg"),
     ],
   },
   {
-    name: "Dara Chhun",
-    role: "Vegan Lifestyle Blogger · Cambodia",
+    name: "Maddison Taplin",
+    role: "Vegatarian · Phnom Penh",
     quote:
-      "I've tried many plant-based condiments, but nothing comes close to Gogreen. The fermented soybean paste is a pantry staple in my home now. Pure, honest, and deeply flavorful.",
+      "Hands down the best vegetarian/vegan food in Phnom Penh! The food is super fresh, authentic, and packed with flavor—using soy-based meats to replicate classic Khmer dishes at very affordable prices. The staff is attentive, the atmosphere is great, and ordering via the QR code menu with pictures makes it super easy. The owner’s passion really shines through. Highly recommended!",
     rating: 5,
     photos: [
-      "https://images.unsplash.com/photo-1758522488804-268ef5d2d6a6?w=900&h=700&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1758522488640-59b1b0acf03f?w=900&h=700&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1758522488776-f7e48e7f5c2b?w=900&h=700&fit=crop&auto=format",
+      imageAsset("maddison-review-1.jpg"),
+      imageAsset("maddison-review-2.jpg"),
+      imageAsset("maddison-review-3.jpg"),
     ],
   },
   {
-    name: "Malis Sok",
-    role: "Nutritionist & Wellness Coach",
+    name: "AT",
+    role: "Tourist · Phnom Penh",
     quote:
-      "I recommend Gogreen products to all my clients. The quality of ingredients is exceptional — no preservatives, rich in natural probiotics, and made with real compassion for health.",
+      "Very delicious vegan Khmer food! This is as authentic as Khmer food can be while vegan. They use vegan fish sauce (plant derived) and vegan shrimp paste. The food is so good. Try the nhom pajok!",
     rating: 5,
     photos: [
-      "https://images.unsplash.com/photo-1771339140216-8ecb4e490ba7?w=900&h=700&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1625631980722-b728f9cf1036?w=900&h=700&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1780277814234-c3821a9d3f08?w=900&h=700&fit=crop&auto=format",
+      imageAsset("at-review-1.jpg"),
+      imageAsset("at-review-2.jpg"),
+      imageAsset("at-review-3.jpg"),
     ],
   },
   {
-    name: "Piseth Rin",
-    role: "Restaurant Owner · Siem Reap",
+    name: "Possum Xu",
+    role: "Tourist · Phnom Penh",
     quote:
-      "We use Gogreen's Kapi Pao across our entire vegetarian menu. Our customers love it. The authenticity of these products is rare — you can taste the heritage in every jar.",
+      "Tasty vegan fish and nice interior - looks like inspired by Zen Master Thich Nhat Hanh. Menu had a wide selection too. I would recommend this place to anyone who wants to try vegan food in Phnom Penh.",
     rating: 5,
     photos: [
-      "https://images.unsplash.com/photo-1572715376701-98568319fd0b?w=900&h=700&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=900&h=700&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1758522488804-268ef5d2d6a6?w=900&h=700&fit=crop&auto=format",
+      imageAsset("possum-review-1.jpg"),
     ],
   },
 ]

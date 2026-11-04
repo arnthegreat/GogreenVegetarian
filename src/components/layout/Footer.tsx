@@ -102,14 +102,14 @@ export default function Footer({ navigate }: { navigate: Navigate }) {
                     Find a Store
                   </a>
                 </li>
-                <li>
+                {/*<li>
                   <button
                     onClick={() => navigate("shop")}
                     className="text-white/40 text-sm hover:text-white/70 transition-colors text-left"
                   >
                     New Arrivals
                   </button>
-                </li>
+                </li>*/}
               </ul>
             </div>
 
@@ -118,7 +118,9 @@ export default function Footer({ navigate }: { navigate: Navigate }) {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#"
+                    href="https://www.facebook.com/Gogreen.Vegetarian168"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-white/40 text-sm hover:text-white/70 transition-colors"
                   >
                     <svg
@@ -133,7 +135,9 @@ export default function Footer({ navigate }: { navigate: Navigate }) {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://www.tiktok.com/@gogreenvegetarian7"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-white/40 text-sm hover:text-white/70 transition-colors"
                   >
                     <svg

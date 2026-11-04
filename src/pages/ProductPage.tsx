@@ -15,6 +15,7 @@ export default function ProductPage({
   const howRef = useReveal()
   const pairRef = useReveal()
   const cookRef = useReveal()
+  const dishesRef = useReveal()
   const ingRef = useReveal()
   const ctaRef = useReveal()
 
@@ -60,7 +61,7 @@ export default function ProductPage({
       {/* About */}
       <section
         ref={aboutRef as React.RefObject<HTMLElement>}
-        className="reveal py-16 lg:py-20 bg-[#F8F4EC]"
+        className="reveal pt-16 pb-8 lg:pt-20 lg:pb-10 bg-[#F8F4EC]"
       >
         <div className="max-w-4xl mx-auto px-6 lg:px-10">
           <p className="text-[#6B8F5E] text-xs font-semibold tracking-widest uppercase mb-4">
@@ -108,7 +109,7 @@ export default function ProductPage({
       {/* How to Cook */}
       <section
         ref={cookRef as React.RefObject<HTMLElement>}
-        className="reveal py-16 lg:py-20 bg-[#F0EAD8] grain grain-light"
+        className="reveal py-16 lg:py-20 bg-[#F8F4EC] grain grain-light"
       >
         <div className="max-w-4xl mx-auto px-6 lg:px-10">
           <p className="text-[#6B8F5E] text-xs font-semibold tracking-widest uppercase mb-4">
@@ -122,6 +123,50 @@ export default function ProductPage({
           </p>
         </div>
       </section>
+
+      {details.dishImages && (
+        <section
+          ref={dishesRef as React.RefObject<HTMLElement>}
+          className="reveal py-16 lg:py-20 bg-[#F0EAD8] grain grain-light"
+        >
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <p className="text-[#6B8F5E] text-xs font-semibold tracking-widest uppercase mb-4">
+              Serving Ideas
+            </p>
+            <h2 className="font-sans font-bold text-3xl text-[#1A2E15] mb-8">
+              Dishes You Can Make With {product.name}
+            </h2>
+            <div
+              className={`grid gap-6 lg:gap-8 ${
+                details.dishImages.length === 1
+                  ? "grid-cols-1"
+                  : "sm:grid-cols-2"
+              }`}
+            >
+              {details.dishImages.map((dish) => (
+                <figure
+                  key={dish.src}
+                  className={`overflow-hidden rounded-3xl bg-white border border-[#E0D8C8] shadow-sm ${
+                    details.dishImages?.length === 1
+                      ? "w-full sm:col-span-2 sm:max-w-2xl sm:justify-self-center"
+                      : ""
+                  }`}
+                >
+                  <img
+                    src={dish.src}
+                    alt={dish.alt}
+                    className="w-full aspect-[4/3] object-cover"
+                    loading="lazy"
+                  />
+                  <figcaption className="px-5 py-4 text-[#1A2E15] font-semibold">
+                    {dish.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Ingredients */}
       <section

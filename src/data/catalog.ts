@@ -181,6 +181,7 @@
     pairWith: string
     howToCook: string
     ingredients: string
+    dishImages?: { src: string; alt: string; caption: string }[]
   }> = {
     "Prahok Ktis (Plant-Based)": {
       about:
@@ -193,6 +194,18 @@
         "Sauté one teaspoon with shallots, lemongrass, and galangal in coconut oil for two minutes to create a fragrant cooking base. Use this as the foundation for stir-fries, noodle broths, or coconut curries.",
       ingredients:
         "Fermented soybean, sea vegetable extract, lemongrass, galangal, kaffir lime leaf, chilli, sea salt, palm sugar. No artificial preservatives. Store refrigerated after opening.",
+      dishImages: [
+        {
+          src: imageAsset("prahokktisdish.png"),
+          alt: "Prahok Ktis served as a dip with fresh vegetables",
+          caption: "Prahok Ktis with fresh vegetables",
+        },
+        {
+          src: imageAsset("prahokktisdish2.png"),
+          alt: "Prahok Ktis served with rice and fresh vegetables",
+          caption: "Prahok Ktis with rice and vegetables",
+        },
+      ],
     },
     "Prahok Kapi Pao": {
       about:
@@ -205,6 +218,13 @@
         "Heat one tablespoon in a wok with oil until fragrant. Add garlic and shallots, then incorporate your vegetables or protein. The paste blooms beautifully with high heat.",
       ingredients:
         "Roasted black soybean, fermented sea vegetable, garlic, shallot, dried chilli, palm sugar, coconut vinegar, sea salt. Slow roasted. No MSG. Refrigerate after opening.",
+      dishImages: [
+        {
+          src: imageAsset("kapipaodish.jpg"),
+          alt: "A serving of Kapi Pao ready to enjoy",
+          caption: "Kapi Pao, served ready to enjoy",
+        },
+      ],
     },
     "Fermented Soybean Paste": {
       about:
@@ -217,6 +237,18 @@
         "For a simple dipping sauce: combine two teaspoons of paste with lime juice, a touch of coconut sugar, and minced chilli. For a broth: whisk one tablespoon into hot (not boiling) water with dried mushrooms.",
       ingredients:
         "Whole soybeans, sea salt, filtered water. Naturally fermented. No additives. No preservatives. Live cultures present. Keep refrigerated.",
+      dishImages: [
+        {
+          src: imageAsset("fermentedsoybean-dish-1.jpg"),
+          alt: "Fermented soybean paste served as a dip with fresh vegetables",
+          caption: "Fermented soybean paste with fresh vegetables",
+        },
+        {
+          src: imageAsset("fermentedsoybean-dish-2.png"),
+          alt: "A vegetable dish prepared with fermented soybean paste",
+          caption: "A vegetable dish with fermented soybean paste",
+        },
+      ],
     },
     "Herb & Lemongrass Blend": {
       about:

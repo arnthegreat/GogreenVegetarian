@@ -78,13 +78,13 @@ export function ClassesSection() {
           </div>
           <div
             ref={gridRef as React.RefObject<HTMLDivElement>}
-            className="reveal max-w-4xl mx-auto mb-10 sm:mb-12"
+            className="reveal max-w-6xl mx-auto mb-10 sm:mb-12"
             role="region"
             aria-label="Photos from past cooking classes"
             aria-roledescription="carousel"
           >
             <div className="relative overflow-hidden rounded-3xl bg-[#1A2E15] shadow-xl">
-              <div className="relative aspect-[4/3] sm:aspect-[16/10] bg-[#A8C49A]">
+              <div className="relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] bg-[#A8C49A]">
                 {CLASS_PHOTOS.map((photo, index) => (
                   <img
                     key={photo.src}

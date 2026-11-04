@@ -1,5 +1,6 @@
-import { LeafIcon } from '@/components/icons'
-import type { Navigate } from '@/types/navigation'
+import gogreenLogo from "@/assets/logo/gogreenlogo.png"
+
+import type { Navigate } from "@/types/navigation"
 
 export default function Footer({ navigate }: { navigate: Navigate }) {
   return (
@@ -12,13 +13,15 @@ export default function Footer({ navigate }: { navigate: Navigate }) {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12">
             <div>
               <div className="flex items-center gap-2.5 mb-5">
-                <div className="w-8 h-8 rounded-full bg-[#A8C49A]/15 flex items-center justify-center">
-                  <LeafIcon className="w-4 h-4 text-[#6B8F5E]" />
-                </div>
-                <span className="font-sans text-lg font-bold tracking-wide">
-                  <span style={{ color: "#C4962A" }}>Go</span>
-                  <span style={{ color: "#6B8F5E" }}>green</span>{" "}
-                  <span style={{ color: "#C4962A" }}>Vegetarian</span>
+                <img
+                  src={gogreenLogo}
+                  alt="Gogreen Vegetarian"
+                  className="h-14 w-14 object-contain"
+                />
+                <span className="font-sans text-sm font-bold tracking-wide ml-1">
+                  <span style={{ color: "#C4962A" }}>GO</span>
+                  <span style={{ color: "#A8C49A" }}>GREEN</span>{" "}
+                  <span style={{ color: "#C4962A" }}>VEGETARIAN</span>
                 </span>
               </div>
               <p className="text-white/40 text-sm leading-relaxed mb-6">
@@ -27,8 +30,8 @@ export default function Footer({ navigate }: { navigate: Navigate }) {
               </p>
               <address className="text-white/30 text-xs not-italic leading-relaxed space-y-1">
                 <div>Phnom Penh, Cambodia</div>
-                <div>hello@gogreen.com.kh</div>
-                <div>+855 12 345 678</div>
+                <div>gogreenvegetarian1@gmail.com</div>
+                <div>+855 16 810 047</div>
               </address>
             </div>
 

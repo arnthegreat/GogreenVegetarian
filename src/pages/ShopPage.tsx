@@ -27,7 +27,7 @@ export default function ShopComingSoonPage({ navigate }: { navigate: (p: Page) =
             </p>
             <div className="space-y-3">
               <a
-                href="tel:+85512345678"
+                href="tel:+85516810047"
                 className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
               >
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
@@ -46,11 +46,11 @@ export default function ShopComingSoonPage({ navigate }: { navigate: (p: Page) =
                   </svg>
                 </div>
                 <span className="font-display text-lg font-semibold">
-                  +855 12 345 678
+                  +855 16 810 047
                 </span>
               </a>
               <a
-                href="mailto:send2alang@yahoo.com"
+                href="mailto:gogreenvegetarian1@gmail.com"
                 className="flex items-center gap-3 text-white/80 hover:text-white transition-colors"
               >
                 <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
@@ -68,7 +68,7 @@ export default function ShopComingSoonPage({ navigate }: { navigate: (p: Page) =
                     />
                   </svg>
                 </div>
-                <span>hello@gogreen.com.kh</span>
+                <span>gogreenvegetarian1@gmail.com</span>
               </a>
             </div>
           </div>

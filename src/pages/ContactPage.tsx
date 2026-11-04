@@ -65,9 +65,8 @@ export default function ContactPage({ navigate }: { navigate: (p: Page) => void 
           <div className="space-y-5">
             {[
               { icon: "📍", label: "Location", val: "Phnom Penh, Cambodia" },
-              { icon: "📞", label: "Phone", val: "+855 12 345 678" },
-              { icon: "✉️", label: "Email", val: "send2alang@yahoo.com" },
-              { icon: "🕘", label: "Response time", val: "Within 24 hours" },
+              { icon: "📞", label: "Phone", val: "+855 16 810 047" },
+              { icon: "✉️", label: "Email", val: "gogreenvegetarian1@gmail.com" },
             ].map((item) => (
               <div key={item.label} className="flex items-start gap-4">
                 <span className="text-xl mt-0.5">{item.icon}</span>
@@ -232,10 +231,10 @@ export default function ContactPage({ navigate }: { navigate: (p: Page) => void 
               <p className="text-center text-[#B0A898] text-xs">
                 Or call us at{" "}
                 <a
-                  href="tel:+85512345678"
+                  href="tel:+85516810047"
                   className="text-[#6B8F5E] hover:underline"
                 >
-                  +855 12 345 678
+                  +855 16 810 047
                 </a>
               </p>
             </form>

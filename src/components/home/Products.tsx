@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from '@/components/icons'
-import { PRODUCTS, VISIBLE } from '@/data/catalog'
-import { useReveal } from '@/hooks/useReveal'
-import type { Page } from '@/types/navigation'
+import { useEffect, useState } from "react"
+import { ChevronLeft, ChevronRight } from "@/components/icons"
+import { PRODUCTS, VISIBLE } from "@/data/catalog"
+import { useReveal } from "@/hooks/useReveal"
+import type { Page } from "@/types/navigation"
 
 export function Products({
   navigate,
@@ -12,8 +12,31 @@ export function Products({
   setSelectedProduct: (i: number) => void
 }) {
   const [start, setStart] = useState(0)
+  const [isMobile, setIsMobile] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 639px)").matches,
+  )
   const headRef = useReveal()
   const gridRef = useReveal(0.08)
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 639px)")
+    const updateLayout = () => {
+      setIsMobile(mediaQuery.matches)
+      setStart((current) =>
+        Math.min(
+          current,
+          Math.max(0, PRODUCTS.length - (mediaQuery.matches ? 1 : VISIBLE)),
+        ),
+      )
+    }
+
+    mediaQuery.addEventListener("change", updateLayout)
+    return () => mediaQuery.removeEventListener("change", updateLayout)
+  }, [])
+
+  const visibleCount = isMobile ? 1 : VISIBLE
   return (
     <section
       id="products"
@@ -47,19 +70,22 @@ export function Products({
               <button
                 onClick={() => setStart((s) => Math.max(0, s - 1))}
                 disabled={start === 0}
+                aria-label="Previous products"
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition-colors"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <span className="text-white/40 text-xs tabular-nums">
-                {start + 1}–{Math.min(start + VISIBLE, PRODUCTS.length)} /{" "}
-                {PRODUCTS.length}
+                {start + 1} / {PRODUCTS.length}
               </span>
               <button
                 onClick={() =>
-                  setStart((s) => Math.min(PRODUCTS.length - VISIBLE, s + 1))
+                  setStart((s) =>
+                    Math.min(PRODUCTS.length - visibleCount, s + 1),
+                  )
                 }
-                disabled={start + VISIBLE >= PRODUCTS.length}
+                disabled={start + visibleCount >= PRODUCTS.length}
+                aria-label="Next products"
                 className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white disabled:opacity-30 hover:bg-white/10 transition-colors"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -71,7 +97,7 @@ export function Products({
           ref={gridRef as React.RefObject<HTMLDivElement>}
           className="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5"
         >
-          {PRODUCTS.slice(start, start + VISIBLE).map((p, i) => (
+          {PRODUCTS.slice(start, start + visibleCount).map((p, i) => (
             <div
               key={p.name}
               onClick={() => {

@@ -69,7 +69,7 @@ export function Hero({ navigate }: { navigate: (p: Page) => void }) {
 
         {/* Hero slideshow panel — shown on all screen sizes */}
         <div className="hero-panel block relative">
-          <div className="rounded-[2rem] overflow-hidden aspect-[4/3] sm:aspect-[3/4] bg-[#2D5016] relative shadow-2xl">
+          <div className="rounded-[2rem] overflow-hidden aspect-[3/4] sm:aspect-[3/4] bg-[#2D5016] relative shadow-2xl">
             {slides.map((src, i) => (
               <img
                 key={src}
@@ -97,6 +97,7 @@ export function Hero({ navigate }: { navigate: (p: Page) => void }) {
           </div>
         </div>
       </div>
+      {/* Scroll down indicator 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 animate-bounce">
         <svg
           className="w-6 h-6"
@@ -111,7 +112,7 @@ export function Hero({ navigate }: { navigate: (p: Page) => void }) {
             d="M19 9l-7 7-7-7"
           />
         </svg>
-      </div>
+      </div>*/}
     </section>
   )
 }

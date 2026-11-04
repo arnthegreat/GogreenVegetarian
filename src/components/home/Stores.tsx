@@ -40,7 +40,7 @@ export function Stores({
         </div>
         <div
           ref={gridRef as React.RefObject<HTMLDivElement>}
-          className="reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10 sm:mb-14"
+          className="reveal grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10 sm:mb-14"
         >
           {STORES.map((s, i) => (
             <div

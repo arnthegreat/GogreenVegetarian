@@ -200,10 +200,10 @@ export default function PartnerPage({ navigate }: { navigate: (p: Page) => void 
               </div>
             </div>
             <a
-              href="tel:+85512345678"
+              href="tel:+85516810047"
               className="shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#C4962A] hover:bg-[#E8B84B] text-white font-semibold transition-colors text-sm"
             >
-              +855 12 345 678
+              +855 16 810 047
             </a>
           </div>
         </div>

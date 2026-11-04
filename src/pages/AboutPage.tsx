@@ -2,7 +2,28 @@ import { useReveal } from '@/hooks/useReveal'
 import { IMG } from '@/data/site'
 import { ClassesSection } from '@/components/sections/CookingClasses'
 import { InnerNav } from '@/components/layout/index'
+import { ChevronLeft, ChevronRight } from '@/components/icons'
+import { useCarousel } from '@/hooks/useCarousel'
+import { imageAsset } from '@/lib/imageAssets'
 import type { Page } from '@/types/navigation'
+
+const PACKAGING_PHOTOS = [
+  {
+    src: imageAsset("packaging-history-1.jpg"),
+    alt: "An early collection of Gogreen products in labeled glass jars",
+    caption: "An old packaging of Gogreen products",
+  },
+  {
+    src: imageAsset("packaging-history-2.jpg"),
+    alt: "A Gogreen product jar held in front of a tree",
+    caption: "An old packaging of Gogreen products",
+  },
+  {
+    src: imageAsset("packaging-history-3.jpg"),
+    alt: "A Gogreen product jar displayed in an urban setting",
+    caption: "An old packaging of Gogreen products",
+  },
+]
 
 const BENEFITS = [
   {
@@ -10,11 +31,13 @@ const BENEFITS = [
     title: "Animal Welfare",
     desc: "Every product is entirely free from animal ingredients and cruelty. We believe all living beings deserve dignity — our entire range reflects that commitment, aligned with Buddhist values and compassionate living.",
   },
+
   {
     icon: "🫀",
     title: "Health Benefits",
     desc: "Rich in plant proteins, natural probiotics, vitamins, and minerals. Our fermented products actively support digestion, immunity, and long-term wellbeing — giving you nourishment without compromise.",
   },
+
   {
     icon: "🌍",
     title: "Environmental Impact",
@@ -53,6 +76,16 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
   const promisesHeadRef = useReveal()
   const promisesGridRef = useReveal(0.06)
   const ctaRef = useReveal()
+  const packagingTextRef = useReveal()
+  const packagingCarouselRef = useReveal()
+  const {
+    current: packagingIndex,
+    setCurrent: setPackagingIndex,
+    prev: prevPackagingPhoto,
+    next: nextPackagingPhoto,
+    interactionProps: packagingInteractionProps,
+  } = useCarousel(PACKAGING_PHOTOS.length, 4500)
+  const packagingPhoto = PACKAGING_PHOTOS[packagingIndex]
 
   return (
     <div className="min-h-screen bg-[#F8F4EC]">
@@ -139,6 +172,92 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
         </div>
       </section>
 
+      {/* ── Packaging history ── */}
+      <section
+        className="bg-[#F0EAD8] py-20 lg:py-28 overflow-hidden"
+        role="region"
+        aria-label="Gogreen packaging history"
+        aria-roledescription="carousel"
+        {...packagingInteractionProps}
+      >
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div
+            ref={packagingTextRef as React.RefObject<HTMLDivElement>}
+            className="reveal"
+          >
+            <p className="text-[#6B8F5E] text-xs font-semibold tracking-widest uppercase mb-5">
+              A Look Back
+            </p>
+            <h2 className="font-sans font-bold text-4xl text-[#1A2E15] leading-tight mb-6">
+              The Story Behind Our{" "}
+              <span className="text-[#2D5016]">Packaging</span>
+            </h2>
+            <p className="text-[#6B6558] leading-relaxed text-lg mb-5">
+              These photos capture an early chapter of Gogreen Vegetarian:
+              familiar glass jars, golden lids, and illustrated labels
+              introducing our Cambodian plant-based flavors.
+            </p>
+            <p className="text-[#6B6558] leading-relaxed">
+              As our product range has grown, each jar has continued to carry
+              the same promise inside — authentic recipes made with care and
+              respect for Cambodian food traditions.
+            </p>
+          </div>
+
+          <div
+            ref={packagingCarouselRef as React.RefObject<HTMLDivElement>}
+            className="reveal min-w-0"
+          >
+            <div className="relative overflow-hidden rounded-[2rem] bg-[#1A2E15] shadow-xl">
+              <div className="aspect-[4/3] bg-[#E0D8C8]">
+                <img
+                  src={packagingPhoto.src}
+                  alt={packagingPhoto.alt}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <button
+                onClick={prevPackagingPhoto}
+                aria-label="Previous packaging photo"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-colors"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={nextPackagingPhoto}
+                aria-label="Next packaging photo"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 hover:bg-black/70 text-white flex items-center justify-center transition-colors"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+              <div className="flex items-center justify-between gap-4 px-5 py-4">
+                <p className="text-white/80 text-sm">
+                  {packagingPhoto.caption}
+                </p>
+                <span className="text-white/50 text-xs tabular-nums shrink-0">
+                  {packagingIndex + 1}/{PACKAGING_PHOTOS.length}
+                </span>
+              </div>
+            </div>
+            <div className="flex justify-center gap-2 mt-4">
+              {PACKAGING_PHOTOS.map((photo, index) => (
+                <button
+                  key={photo.src}
+                  onClick={() => setPackagingIndex(index)}
+                  aria-label={`Show packaging photo ${index + 1}`}
+                  aria-current={index === packagingIndex ? "true" : undefined}
+                  className={`h-2 rounded-full transition-all ${
+                    index === packagingIndex
+                      ? "w-6 bg-[#2D5016]"
+                      : "w-2 bg-[#6B8F5E]/40"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Mission / Vision / Values ── */}
       <section className="bg-[#1A2E15] py-24 lg:py-32 grain overflow-hidden relative">
         <div className="absolute top-0 left-1/3 w-80 h-80 rounded-full bg-[#2D5016]/40 blur-3xl animate-breathe pointer-events-none" />
@@ -162,20 +281,31 @@ export default function AboutPage({ navigate }: { navigate: (p: Page) => void })
             {[
               {
                 title: "Our Mission",
+
                 icon: "",
+
                 body: "To create authentic, delicious plant-based Cambodian products that make healthy, compassionate living easy and accessible — without sacrificing flavor, culture, or tradition.",
+
                 delay: 0,
               },
+
               {
                 title: "Our Vision",
+
                 icon: "",
+
                 body: "To become Southeast Asia's most trusted plant-based food brand, bringing the rich culinary heritage of Cambodia to tables across the region and beyond.",
+
                 delay: 120,
               },
+
               {
                 title: "Our Values",
+
                 icon: "",
+
                 body: "Compassion for all living beings. Respect for Cambodian culture. Commitment to health and sustainability. Transparency in every ingredient. Courage to build something meaningful.",
+
                 delay: 240,
               },
             ].map((v) => (

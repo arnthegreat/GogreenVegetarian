@@ -1,7 +1,9 @@
 import { imageAsset } from '@/lib/imageAssets'
 
 export const IMG = {
-  hero: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1800&h=1000&fit=crop&auto=format",
+  hero: [
+    imageAsset("soybeanpastedish.jpg")
+  ],
   heroSlides: [
     imageAsset("products.png"),
     imageAsset("soybean.png"),

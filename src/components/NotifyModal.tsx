@@ -74,14 +74,14 @@ export default function NotifyModal({ onClose }: { onClose: () => void }) {
             <div className="mb-6">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#C4962A]/15 text-[#C4962A] text-xs font-semibold mb-3">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#C4962A] animate-pulse" />{" "}
-                Coming Soon
+                Classes Paused
               </div>
               <h2 className="font-display text-2xl font-semibold text-[#1A2E15] mb-1">
-                Get Notified
+                Hear When Classes Return
               </h2>
               <p className="text-[#6B6558] text-sm leading-relaxed">
-                Enter your email and we'll let you know when our cooking classes
-                officially launch.
+                Enter your email and we'll let you know when new cooking
+                classes are planned.
               </p>
             </div>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -108,7 +108,7 @@ export default function NotifyModal({ onClose }: { onClose: () => void }) {
                 disabled={submitting}
                 className="w-full py-3.5 rounded-full bg-[#2D5016] hover:bg-[#3D6822] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-colors"
               >
-                {submitting ? 'Submitting…' : 'Notify Me When Classes Launch'}
+                {submitting ? 'Submitting…' : 'Notify Me When Classes Return'}
               </button>
             </form>
           </>

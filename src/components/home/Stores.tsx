@@ -40,7 +40,7 @@ export function Stores({
         </div>
         <div
           ref={gridRef as React.RefObject<HTMLDivElement>}
-          className="reveal grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-10 sm:mb-14"
+          className="reveal grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-10 sm:mb-14"
         >
           {STORES.map((s, i) => (
             <div
@@ -49,7 +49,11 @@ export function Stores({
                 setSelectedStore(i)
                 navigate("store")
               }}
-              className="card-lift group bg-[#FEFCF7] hover:bg-[#F0EAD8] border border-[#E0D8C8] hover:border-[#A8C49A]/60 rounded-2xl p-6 transition-all duration-300 cursor-pointer"
+              className={`card-lift group bg-[#FEFCF7] hover:bg-[#F0EAD8] border border-[#E0D8C8] hover:border-[#A8C49A]/60 rounded-2xl p-6 transition-all duration-300 cursor-pointer ${
+                i === STORES.length - 1
+                  ? "max-sm:col-span-2 max-sm:w-[calc(50%-0.375rem)] max-sm:justify-self-center"
+                  : ""
+              }`} 
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               <div className="mb-4 inline-block group-hover:animate-wiggle">

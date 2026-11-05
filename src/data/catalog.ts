@@ -6,6 +6,7 @@
   import vegetarianrestaurant from "@/assets/logo/vegetarianrestaurants.png"
   import weemarkethub from "@/assets/logo/weemarkethub.png"
   import wholesalevegetarianogo from "@/assets/logo/wholesalevegetariangroceries.png"
+  import orusseymarketlogo from "@/assets/logo/orusseymarketlogo.png"
   import { IMG } from '@/data/site'
   import { imageAsset } from '@/lib/imageAssets'
 
@@ -142,6 +143,20 @@
       hours: "6am–11pm",
     },
     {
+      name: "Orussey Market",
+      type: "Public Market",
+      logoImage: orusseymarketlogo,
+      products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
+      heroImage: imageAsset("orusseymarket.jpg"),
+      storeImages: [
+        imageAsset("orusseymarket2.jpg"),
+        imageAsset("orusseymarket3.jpg"),
+        imageAsset("orusseymarket.jpg"),
+      ],
+      address: "Oknha Tep Phan St. (182), Phnom Penh",
+      hours: "8am–5pm",
+    },
+    {
       name: "Wholesale Vegetarian Groceries",
       type: "Wholesaler",
       logoImage: wholesalevegetarianogo,
@@ -156,8 +171,8 @@
       hours: "6am–6pm",
     },
     {
-      name: "Vegetarian Restaurants",
-      type: "Food Service",
+      name: "Selected Vegetarian Restaurants",
+      type: "Restaurant",
       logoImage: vegetarianrestaurant,
       products: [PRODUCTS.at(0)!, PRODUCTS.at(1)!, PRODUCTS.at(2)!],
       heroImage: imageAsset("vegetarianrestaurantsdisplay.jpg"),
@@ -168,7 +183,7 @@
       ],
       address: "Various locations across Phnom Penh",
       hours: "7am–8pm",
-    },
+    }
   ]
 
   export type StoreItem = typeof STORES[number]
@@ -241,12 +256,12 @@
         {
           src: imageAsset("fermentedsoybean-dish-1.jpg"),
           alt: "Fermented soybean paste served as a dip with fresh vegetables",
-          caption: "Fermented soybean paste with fresh vegetables",
+          caption: "Fermented soybean paste cooked as BOK TEUK KRUENG",
         },
         {
           src: imageAsset("fermentedsoybean-dish-2.png"),
           alt: "A vegetable dish prepared with fermented soybean paste",
-          caption: "A vegetable dish with fermented soybean paste",
+          caption: "Fermented soybean paste cooked as Khmer AMOK",
         },
       ],
     },

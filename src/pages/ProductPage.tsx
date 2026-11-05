@@ -164,6 +164,9 @@ export default function ProductPage({
                 </figure>
               ))}
             </div>
+            <p className="mt-8 text-center text-[#6B8F5E] font-bold text-base sm:text-m">
+  CAN COOK IN MANY OTHER TRADITIONAL DISHES.
+</p>
           </div>
         </section>
       )}

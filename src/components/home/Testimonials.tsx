@@ -161,6 +161,7 @@ function Stars({ count }: { count: number }) {
 }
 
 const VISIBLE_REVIEWS = 2
+const REVIEW_PAGES = TESTIMONIALS.length - VISIBLE_REVIEWS + 1
 
 export function Testimonials() {
   const [start, setStart] = useState(0)
@@ -196,9 +197,7 @@ export function Testimonials() {
               <ChevronLeft className="w-5 h-5" />
             </button>
             <span className="text-white/40 text-xs tabular-nums">
-              {start + 1}–
-              {Math.min(start + VISIBLE_REVIEWS, TESTIMONIALS.length)} /{" "}
-              {TESTIMONIALS.length}
+              {start + 1}/{REVIEW_PAGES}
             </span>
             <button
               onClick={() =>

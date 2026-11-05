@@ -37,6 +37,7 @@ export function Products({
   }, [])
 
   const visibleCount = isMobile ? 1 : VISIBLE
+  const pageCount = PRODUCTS.length - visibleCount + 1
   return (
     <section
       id="products"
@@ -76,7 +77,7 @@ export function Products({
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <span className="text-white/40 text-xs tabular-nums">
-                {start + 1} / {PRODUCTS.length}
+                {start + 1}/{pageCount}
               </span>
               <button
                 onClick={() =>

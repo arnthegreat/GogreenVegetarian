@@ -227,7 +227,8 @@ export default function PartnerPage({ navigate }: { navigate: (p: Page) => void 
                   Inquiry Received!
                 </h3>
                 <p className="text-[#6B6558] leading-relaxed mb-6">
-                  Thank you for your interest. Our team will reach out within 48
+                  Thank you for your interest. A confirmation email has been
+                  sent to your inbox, and our team will reach out within 48
                   hours.
                 </p>
                 <button

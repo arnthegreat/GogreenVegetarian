@@ -77,6 +77,8 @@ const contactAutoReplyTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID?.tri
 const contactNotificationTemplateId =
   import.meta.env.VITE_EMAILJS_CONTACT_NOTIFICATION_TEMPLATE_ID?.trim()
 
+const partnershipAutoReplyTemplateId = "template_hwpl0e5"
+
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY?.trim()
 
 function getTemplateParams(inquiry: Inquiry): EmailTemplateParams {
@@ -199,8 +201,11 @@ export async function submitInquiry(inquiry: Inquiry): Promise<void> {
     if (inquiry.type === "contact" && contactAutoReplyTemplateId) {
       await send(contactAutoReplyTemplateId)
     }
+    if (inquiry.type === "partnership") {
+      await send(partnershipAutoReplyTemplateId)
+    }
   } catch (error) {
-    if (inquiry.type === "contact") {
+    if (inquiry.type === "contact" || inquiry.type === "partnership") {
       throw new Error(
         `Your message may already have reached us, but an email could not be sent: ${error instanceof Error ? error.message : "Please try again later."}`,
       )
